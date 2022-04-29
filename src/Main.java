@@ -7,13 +7,16 @@ public class Main {
         test();
     }
 
+    public static String getCallerClassAndMethodName() {
 
-    public static void test()
-    {
+        return null; // your implementation here
+    }
+
+    public static void test() {
         Thread current = Thread.currentThread();
         StackTraceElement[] methods = current.getStackTrace();
 
-        for(var info: methods)
+        for (var info : methods)
             System.out.println(info);
     }
 
