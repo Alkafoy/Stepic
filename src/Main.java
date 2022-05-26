@@ -9,9 +9,12 @@ public class Main {
     }
 
     public static String getCallerClassAndMethodName() {
-        Thread current = Thread.currentThread();
-        StackTraceElement[] methods = current.getStackTrace();
 
-        return null; // your implementation here
+        StackTraceElement[] methods = Thread.currentThread().getStackTrace();
+        if (methods.length < 4) {
+            return null;
+        } else {
+            return methods[2].getClassName() + " " + methods[2].getMethodName();
+        }
     }
 }
